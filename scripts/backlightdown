@@ -1,0 +1,9 @@
+#!/bin/zsh
+brightness=`cat /sys/class/backlight/radeon_bl0/brightness`
+
+((brightness = $brightness - 16))
+((brightness = ($brightness >=16) *$brightness + ($brightness < 16)*16))
+echo $brightness
+echo $brightness > /sys/class/backlight/radeon_bl0/brightness
+
+
