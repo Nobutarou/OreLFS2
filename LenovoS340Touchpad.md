@@ -36,5 +36,8 @@ with i8042.noloop i8042.nomux i8042.nopnp i8042.reset, no.
 
 All of Multifunction device drivers to <m>, no
 
+According to https://forums.gentoo.org/viewtopic-t-1086512-start-0.html, I set <M> for all
+under device -> pincontrollers,
+
 <!-- vim: set tw=90 filetype=markdown : -->
 
