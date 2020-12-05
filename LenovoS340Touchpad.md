@@ -39,5 +39,7 @@ All of Multifunction device drivers to <m>, no
 According to https://forums.gentoo.org/viewtopic-t-1086512-start-0.html, I set <M> for all
 under device -> pincontrollers,
 
+Wow, finally work. The functionkey, fn+F6 also works without any binding.
+
 <!-- vim: set tw=90 filetype=markdown : -->
 
