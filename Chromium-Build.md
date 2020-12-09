@@ -1,3 +1,10 @@
+# 2020.12.09
+
+The easiest way to build Chromium is using Ubuntu. However, the build command doesn't take
+CFALGS into account. Thus, there is no benefit to compile it by myself.
+
+Use Google Chrome instead!
+
 # 2020.05.20 
 
 never touch Chromium again.

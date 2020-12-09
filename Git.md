@@ -6,10 +6,14 @@ https://support.atlassian.com/bitbucket-cloud/docs/maintain-a-git-repository/
 
 BFG を使うのが楽だった
 
-リポジトリの中で
+リポジトリの一つ上で
 
 ```
-java -jar bfg.jar --strip-blobs-bigger-than 1K
+java -jar bfg.jar --strip-blobs-bigger-than 1K <repo folder>
+```
+
+そしたら
+```
 git reflog expire --expire=now --all
 git gc --prune=now
 git push --all --force
