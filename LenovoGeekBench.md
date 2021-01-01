@@ -6,4 +6,7 @@ CONFIG_RANDOMIZE_BASE=n: single 902, multi 1711, adopt
 CONFIG_MICROCODE_OLD_INTERFACE=n: single 905, multi 1656, adopt for security
 CONFIG_SCHED_MC=y: single 898, multi 1687, adopt (seems improved)
 CONFIG_X86_AMD_FREQ_SENSITIVITY=m, single 902, multi 1693, adopt
+
+When CPU temp goes beyond 100 deg C, the bios drops down cpu freqs to 300MHz. It mainly
+hurts the score.
 <!-- vim: set tw=90 filetype=markdown : -->
