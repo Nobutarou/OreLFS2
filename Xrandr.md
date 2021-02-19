@@ -16,6 +16,9 @@ xrandr --output HDMI-A-0 --off
 # 複製
 # この場合 eDP が元々の Laptop の画面
 xrandr --output HDMI-A-0 --same-as eDP
+
+# 左に置く
+xrandr --output HDMI-A-0 --left-of eDP --auto
 ```
 
 <!-- vim: set tw=90 filetype=markdown : -->
