@@ -1,5 +1,7 @@
 Android の /etc/hosts を pc 側から書き換えたい。
 
+以下いろいろやったけど結論は root 化しないと駄目みたい。
+
 # Android 開発ツールのインストール、セットアップ
 
 commandlinetools というのが zip でころがっているので展開
@@ -58,8 +60,12 @@ https://qiita.com/konifar/items/77744cf8179657adcc3e
 
 ```
 adb pull /system/etc/hosts
-adb push ./hosts /system/etc/hosts
+
+adb shell
+su
 ```
+
+うーん su コマンドがない。これroot化とかいうのやらないと駄目？
 
 <!-- vim: set tw=90 filetype=markdown : -->
 
