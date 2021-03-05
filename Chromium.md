@@ -1,3 +1,11 @@
+# 2021.03.05
+
+I have built Brave as a variation of Chromium. It spent 70GB disk. It took one day. I
+bother to do it again.
+
+I have also find https://chromium.woolyss.com/ . This provides binary tarballs. I choose
+it and will choose.
+
 # 2020.12.09
 
 The easiest way to build Chromium is using Ubuntu. However, the build command doesn't take
