@@ -3,6 +3,9 @@
 I have built Brave as a variation of Chromium. It spent 70GB disk. It took one day. I
 bother to do it again.
 
+I have tested Chromium on Flatpak. I cannot input Japanese words via xim or gtk_im_module.
+As my prior browser is Firefox. Thus, this is not critical.
+
 I have also find https://chromium.woolyss.com/ . This provides binary tarballs. I choose
 it and will choose.
 
