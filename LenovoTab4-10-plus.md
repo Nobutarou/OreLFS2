@@ -1,8 +1,19 @@
-Android の /etc/hosts を pc 側から書き換えたい。
+# app を sd に移す
+
+開発者向けオプション -> 外部ストレージへのアプリの書き込みを許可
+
+にするだけで良かった
+
+# Root 化について
+
+Kingoroot というアプリで失敗。カペルスキーも危険だと言ってるし、root の理由が /etc/hosts
+とアプリを sd に移したいだけなので(root 不要だった)、もうやめよう。
+
+# Android の /etc/hosts を pc 側から書き換えたい。
 
 以下いろいろやったけど結論は root 化しないと駄目みたい。
 
-# Android 開発ツールのインストール、セットアップ
+## Android 開発ツールのインストール、セットアップ
 
 commandlinetools というのが zip でころがっているので展開
 https://developer.android.com/studio#cmdline-tools
@@ -21,7 +32,7 @@ cmdline-tools ディレクトリに tools ディレクトリを作成して中�
 
 先のディレクトリ構成だと /sources/androidsdk/platform-tools にインストールされる
 
-# パーミッション、udev ルール
+## パーミッション、udev ルール
 https://developer.android.com/studio/run/device
 
 を参考にユーザーを plugdev グループに所属させる.
@@ -32,7 +43,7 @@ https://github.com/M0Rf30/android-udev-rules/
 しかし adb devices で何も表示されない.
 と言うのも GROUP 指定が plugdev になってなかったから。書きなおした
 
-# カーネルかなあ？ --> 関係なかった
+## カーネルかなあ？ --> 関係なかった
 
 こんなときに限って GentooWiki にカーネル設定情報がない。しかたないので Arduino で代用
 
@@ -49,7 +60,7 @@ CONFIG_USB_ACM=m
 CONFIG_USB_GADGET 以下も m にしてみる
 
 
-# /etc/hosts を書き換える
+## /etc/hosts を書き換える
 
 USB 接続して usb デバッグモードを有効にする。
 タブレット情報のビルド番号を 7回タップして開発者になる.

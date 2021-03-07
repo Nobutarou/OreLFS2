@@ -1,3 +1,8 @@
+# scroll issue
+
+Scroll is snaggy. To improve, I have to kill smooth scrolling. Go to chrome://flags/ and
+kill smooth scroll. And I also have to install an extension, Linux scroll speed fix.
+
 # 2021.03.05
 
 I have built Brave as a variation of Chromium. It spent 70GB disk. It took one day. I
