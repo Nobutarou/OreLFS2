@@ -1,3 +1,9 @@
+# Recommend to use pavucontrol
+
+This is a gui front end. To build it, much more dependancies should be installed than
+Pulsemixer. However, Pavucontrol shows much more infomations. For example, it shows a base
+level of a microphone which Pulsemixer does not show. Obviously more useful.
+
 # how to use pactl
 
 ```
