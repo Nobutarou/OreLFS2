@@ -10,5 +10,9 @@ PULSE_SERVER=unix:/tmp/pulse-XE7cIQuj2CTJ/native flatpak run  org.pulseaudio.pav
 ```
 
 というように環境変数が必要
-<!-- vim: set tw=90 filetype=markdown : -->
 
+# file chooser does not open
+
+xdg-desktop-portal-gtk is needed.
+
+<!-- vim: set tw=90 filetype=markdown : -->
