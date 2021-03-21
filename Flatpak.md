@@ -13,6 +13,6 @@ PULSE_SERVER=unix:/tmp/pulse-XE7cIQuj2CTJ/native flatpak run  org.pulseaudio.pav
 
 # file chooser does not open
 
-xdg-desktop-portal-gtk is needed.
+xdg-desktop-portal might needed. (Hey Flatpak, you shall install by yourself...)
 
 <!-- vim: set tw=90 filetype=markdown : -->
