@@ -19,6 +19,9 @@ xrandr --output HDMI-A-0 --same-as eDP
 
 # 左に置く
 xrandr --output HDMI-A-0 --left-of eDP --auto
+
+# primary にする
+xrandr --output HDMI-A-0 --primary
 ```
 
 <!-- vim: set tw=90 filetype=markdown : -->
