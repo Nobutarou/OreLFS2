@@ -4,6 +4,21 @@ This is a gui front end. To build it, much more dependancies should be installed
 Pulsemixer. However, Pavucontrol shows much more infomations. For example, it shows a base
 level of a microphone which Pulsemixer does not show. Obviously more useful.
 
+# Check the hardware highest sampling rate and depth
+
+```
+grep rates /proc/asound/card0/codec\#0
+grep bits /proc/asound/card0/codec\#0
+```
+
+I can change card0 to card1 when I plug an external usb sound card.
+
+# Check available resampling method
+
+```
+pulseaudio --dump-resample-methods
+```
+
 # how to use pactl
 
 ```
