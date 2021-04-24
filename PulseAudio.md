@@ -6,12 +6,18 @@ level of a microphone which Pulsemixer does not show. Obviously more useful.
 
 # Check the hardware highest sampling rate and depth
 
+For on-board,
+
 ```
 grep rates /proc/asound/card0/codec\#0
 grep bits /proc/asound/card0/codec\#0
 ```
 
-I can change card0 to card1 when I plug an external usb sound card.
+For Sound Blaster Play 3
+
+```
+less /proc/asound/card2/stream0
+```
 
 # Check available resampling method
 
