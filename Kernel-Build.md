@@ -1,5 +1,9 @@
 # Kernel
 
+# clang 対応
+
+いつの間にか clang に対応。CC で指定するだけであとは同じ。v5.12.10 でテスト済
+
 # CC の通し方
 
 なぜか export CC してても通らないので、``make CC=blabla`` する必要がある。KCFLAGS は
