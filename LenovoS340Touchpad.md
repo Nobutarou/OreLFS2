@@ -1,3 +1,16 @@
+# after upgrading kernel, it stopped working. 2021.09.08
+
+I don't know when. I check kernel config and find that I need,
+
+```
+CONFIG_I2C_HID_ACPI=m
+CONFIG_I2C_HID_OF=m
+CONFIG_I2C_HID_OF_GOODIX=m
+```
+
+I might not need those modules. However, they are the trigger to build i2c_hid module. And
+it seems that the Lenovo touchpad need the module.
+
 # Lenovo S340 Touchpad is not recognized
 
 The host, Ubuntu can recognize, but my LFS cannot.
