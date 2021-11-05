@@ -15,4 +15,23 @@ PULSE_SERVER=unix:/tmp/pulse-XE7cIQuj2CTJ/native flatpak run  org.pulseaudio.pav
 
 xdg-desktop-portal might needed. (Hey Flatpak, you shall install by yourself...)
 
+# file セレクターが Qt App で出ない
+
+Qt app には xdg-desktop-portal-kde が必要。ほぼ plasma までの build が必須。
+
+以下は古い情報
+
+```
+flatpak run --command=sh org.kde.kdenlive
+```
+
+とでもすると Flatpak 環境で sh が開く。
+
+```
+rm -v /run/user/1001/flatpak-info
+kdenlive
+```
+
+などとするとファイルセレクターが出るようになる。
+
 <!-- vim: set tw=90 filetype=markdown : -->
