@@ -1,3 +1,11 @@
+# I don't need to run pulseaudio in .xinitrc
+
+pulseaudio can spawn when it is required. Check ~/.config/pulse/client.conf
+
+```
+ autospawn = yes
+```
+
 # Recommend to use pavucontrol
 
 This is a gui front end. To build it, much more dependancies should be installed than
