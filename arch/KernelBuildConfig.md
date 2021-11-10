@@ -40,8 +40,10 @@ CONFIG_LOCALVERSION="ore"
 # CONFIG_SCHED_OMIT_FRAME_POINTER is not set
 
 # cpu family は分かりにくいけど Ryzen は Opteron のところで良いらしい。
-# Gentoo wiki より
-CONFIG_MK8=y 
+# Gentoo wiki より。-march=k8 が付く。
+# なのだけど Phoronix でいくつかベンチしたけど -march 無しと差が出ないので
+# generic で良い。
+CONFIG_GENERIC_CPU=y
 
 # マルチコア用のスケジューラ。スケジューリングは改善するけど、これ自身パフォーマンス
 # への影響があるみたい。
@@ -66,6 +68,24 @@ CONFIG_NODES_SHIFT=1
 
 # クラッシュしたカーネルのダンプができても自分は無力
 # CONFIG_CRASH_DUMP is not set
+```
+
+### security options
+
+基本的に自己責任。
+
+```
+# unsure なら n だそうだ。
+# CONFIG_KEY_DH_OPERATIONS is not set
+# CONFIG_SECURITY is not set
+# CONFIG_SECURITYFS is not set
+
+# dmesg が一般ユーザーで読めないのは、こいつのせいだった。
+# CONFIG_SECURITY_DMESG_RESTRICT is not set
+
+# 1~7% 程度パフォーマンスに影響が出るということで off
+# いつでもブートオプションで有効にできる
+# CONFIG_INIT_ON_ALLOC_DEFAULT_ON is not set
 ```
 
 ### kernel hacking
