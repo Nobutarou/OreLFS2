@@ -29,6 +29,16 @@ CONFIG_LOCALVERSION="ore"
 とは言ってもパフォーマンスに影響しないようなものは気にしない。ディスクは十分あるから。
 もともとモジュールのものは無理に外さない. build 時間なんて気にしないから。
 
+### general
+
+```
+## timers subsystem
+# 基本 cpu は休もうとするのだけど休ませない設定 
+# CONFIG_HZ_PERIODIC
+# CONFIG_NO_HZ
+# CONFIG_HIGH_RES_TIMERS
+```
+
 ### Processor type and features
 
 ```
@@ -68,6 +78,503 @@ CONFIG_NODES_SHIFT=1
 
 # クラッシュしたカーネルのダンプができても自分は無力
 # CONFIG_CRASH_DUMP is not set
+```
+
+### power and acpi
+
+```
+# CONFIG_SUSPEND
+# CONFIG_HIBERNATION
+# CONFIG_PM_DEBUG
+
+# 省電力とパフォーマンスで省電力寄りの機能
+# CONFIG_WQ_POWER_EFFICIENT_DEFAULT
+
+## ACPI
+# CONFIG_ACPI_DEBUG
+# CONFIG_ACPI_EXTLOG
+
+## cpu freq.
+# CONFIG_CPU_FREQ_DEFAULT_GOV_PERFORMANCE
+# CONFIG_X86_INTEL_PSTATE
+# CONFIG_X86_P4_CLOCKMOD
+```
+
+### General architecture-dependent options
+
+```
+# for debugging
+# CONFIG_KPROBES
+# CONFIG_LOCK_EVENT_COUNTS
+```
+
+### loadable modules support
+
+```
+# 得体の知れないモジュールを無理矢理ロードしなくて良い
+# CONFIG_MODULE_FORCE_LOAD
+
+# 使用中のモジュールを無理矢理アンロードしなくて良い
+# CONFIG_MODULE_FORCE_UNLOAD
+
+# メンテナがソースの正確なバージョンを知るのに有効らしいが、私には使いこなせない
+# CONFIG_MODULE_SRCVERSION_ALL
+
+# arch は y でビルドして strip するということをしている。始めから不要
+# CONFIG_MODULE_SIG
+```
+
+### block layer
+
+```
+# ZAC, ZBC, or ZNS なる記憶デバイスは持っていない
+# CONFIG_BLK_DEV_ZONED
+
+## partition types
+# CONFIG_AIX_PARTITION
+# CONFIG_MAC_PARTITION
+# CONFIG_BSD_DISKLABEL
+# CONFIG_MINIX_SUBPARTITION
+# CONFIG_SOLARIS_X86_PARTITION
+# CONFIG_LDM_PARTITION
+# CONFIG_KARMA_PARTITION
+```
+
+### memory management options
+
+```
+# 物理的に稼働中の抜き差しはほぼ不可能
+# MEMORY_HOTPLUG
+
+# unsure = n
+# CONFIG_CMA
+```
+
+### Networking Support
+
+良く分からないので2階層までとする。
+コメントしてないのは unsure=no や debug 目的であるもの
+
+```
+## networking options
+
+# unsure = no
+# CONFIG_TLS
+# CONFIG_XFRM_INTERFACE
+# CONFIG_XFRM_SUB_POLICY
+# CONFIG_XFRM_STATISTICS
+# CONFIG_NET_KEY_MIGRATE
+# CONFIG_XFRM_MIGRATE
+# CONFIG_IP_MULTICAST
+# CONFIG_IP_ADVANCED_ROUTER
+# CONFIG_NET_IPIP
+# CONFIG_INET_ESP_OFFLOAD
+# CONFIG_INET_ESPINTCP
+# CONFIG_INET_DIAG_DESTROY
+# CONFIG_TCP_CONG_ADVANCED
+# CONFIG_TCP_MD5SIG
+
+# 1st level
+
+# アマチュア無線不要
+# CONFIG_HAMRADIO
+
+# シリアル通信による低速通信は必要ない
+# CONFIG_CAN
+
+## bluetooth subsystem
+# CONFIG_BT_DEBUGFS
+
+# back to 1st level
+# CONFIG_AF_RXRPC_DEBUG
+
+## wireless
+# CONFIG_CFG80211_DEBUGFS
+# CONFIG_MAC80211_DEBUGFS
+
+# back to 1st level
+# CONFIG_NET_9P
+# CONFIG_CEPH_LIB
+
+# おさいふ携帯で有名になったあの NFC は付いてない
+# CONFIG_NFC
+```
+
+### Device drivers 第一階層
+
+ここは第一階層で消せるものを消す。
+
+```
+# 付いてない, 付けることも無い
+# CONFIG_PCCARD is not set
+
+# GPS reciever は無い
+# CONFIG_GNSS is not set
+
+# parallel port などない
+# CONFIG_PARPORT is not set
+
+# RAID も論理パーティションかなにかも使いません
+# CONFIG_MD is not set
+
+# むしろアンチ
+# CONFIG_MACINTOSH_DRIVERS is not set
+
+# Open channel ssd 知りません。deprecated だそうです。要りません
+# CONFIG_NVM is not set
+
+# 障害があるときになにかする機能。自分はカーネル変えて再起動するだけだ
+# CONFIG_WATCHDOG
+
+# sony のメモリスティックなるものは無い
+# CONFIG_MEMSTICK
+
+# 無い
+# CONFIG_INFINIBAND 
+# CONFIG_CHROME_PLATFORMS
+# CONFIG_SURFACE_PLATFORMS
+
+# 物理のポストありません
+# CONFIG_MAILBOX
+
+# 仮想環境のゲストになることはない
+# CONFIG_VIRT_DRIVERS
+# VIRTIO_MENU
+```
+
+### Device Drivers, PCI support
+
+```
+# ノートpc を動いてるまま蓋開けて、pci に何か差したりしないし、たぶん空いてない
+# CONFIG_HOTPLUG_PCI_PCIE
+
+# エラーを報告されても活用する腕がない
+# CONFIG_PCIEAER
+
+# CONFIG_HOTPLUG_PCI
+```
+
+### device drivers, block devices
+
+```
+# floppy なんて存在しない
+# CONFIG_BLK_DEV_FD
+
+# カーネル組み込み暗号化は難しくて使いこなせない
+# CONFIG_BLK_DEV_CRYPTOLOOP
+
+# network block device 不要です
+# CONFIG_BLK_DEV_NBD:
+
+# インストールイメージを展開するときに役に立つ ram disk だそうです
+# most normal users には不要だそうです。
+# CONFIG_BLK_DEV_RAM
+
+# packet writing on cd/dvd だそうで deprecated だそうです。
+# CONFIG_CDROM_PKTCDVD
+
+# wifi しかないノートです。
+# CONFIG_ATA_OVER_ETH
+
+# host にしか成り得ないカーネル
+# CONFIG_VIRTIO_BLK
+
+# unsure = n だそうです 
+# CONFIG_BLK_DEV_RBD
+
+```
+
+### device drivers, scsi device support
+
+ATA や CDR が昔は scsi 扱いだったので、いまだに切れないでいる。
+
+```
+# テープを使うことはない
+# CONFIG_CHR_DEV_ST
+
+# cd チェンジャーを今使う人は居ない
+# CONFIG_CHR_DEV_SCH
+# CONFIG_SCSI_ENCLOSURE
+
+# エラーが出たとろでどうしようもない. デバッグログが出たところでどうしようもない
+# CONFIG_SCSI_CONSTANTS
+# CONFIG_SCSI_LOGGING
+```
+
+### device drivers, sata pata drivers
+
+```
+# 壊れたら買い替えるだけだ
+# CONFIG_ATA_VERBOSE_ERROR
+```
+
+### device drivers, fireware support
+
+fireware 無いから、この下全て不要
+
+### device drivers, networks devices
+
+```
+# ethernet 用の機能なので何か知らないけど不要
+# CONFIG_BONDING
+
+# 2台の pc をシリアルで繋ぐことは無い、というかserial が無い
+# CONFIG_EQUALIZER
+
+# storage をなんかで繋ぐことは無い
+# CONFIG_NET_FC
+
+# virtual な device 不要
+# CONFIG_NET_TEAM
+# CONFIG_MACVLAN
+# CONFIG_IPVLAN
+# CONFIG_VXLAN
+# CONFIG_GENEVE
+
+# ethernet 向けの encryption
+# CONFIG_MACSEC
+
+# virtual
+# NTB_NETDEV 
+
+# これが何か分からん奴が使うことはないんだそうだ。ありがとう
+# CONFIG_TUN
+
+# virtual
+# CONFIG_VETH
+
+# CONFIG_VIRTIO_NET
+
+# virtual
+# CONFIG_NET_VRF
+
+# wwan モデムのドライバー。知らんけど絶対に不要だろう
+# CONFIG_MHI_NET
+
+# ネットワーク越しにkernel マッサージを読むことなんて無い
+# CONFIG_NETCONSOLE
+
+# ネットワークを観察するデベロッパー向けの機能
+# CONFIG_NLMON
+# CONFIG_VSOCKMON
+
+# atm はとにかく有線でのデバイスらしいので全く関係ない
+# CONFIG_ATM_DRIVERS
+
+# Distributed Switch Architecture drivers は ethernet のスイッチだから不要
+# 下層全消し
+
+# 全ての ethernet driver support. wifi しかない。
+
+# 光ファイバーかなにかでしょう
+# CONFIG_FDDI
+
+# 知らない = 持ってない
+# CONFIG_NET_SB1000:
+
+# スイッチ
+# MICREL_KS8995MA
+# CONFIG_MDIO_DEVICE
+
+# ethernet の何か
+# CONFIG_PCS_XPCS
+
+# モデムの仕事
+# CONFIG_PPP
+# CONFIG_SLIP
+
+# wireless lan は atheros (ath10) だけ残す。ath でも debug は消す。
+# CONFIG_ATH10K_DEBUG
+# CONFIG_ATH10K_DEBUGFS
+# developer's test
+# CONFIG_MAC80211_HWSIM
+# Wifi に偽装する ethernet
+# CONFIG_VIRT_WIFI 
+
+# wifi でも bluetooth でもない何かの無線通信
+# CONFIG_IEEE802154_DRIVERS
+
+# wireless wan 以下は全消し。wan じゃない、クライアントだ。
+
+# vmware じゃなくて virtual box 使うと思う
+# CONFIG_VMXNET3
+
+# とにかく wifi, bluetooth 以外は無い
+# CONFIG_FUJITSU_ES
+
+# lenovo がそんなの付けるわけない
+# CONFIG_USB4_NET
+
+# developer test
+# CONFIG_NETDEVSIM
+
+# CONFIG_ISDN
+```
+
+### device drivers, input device support
+
+```
+# アップルやタッチキーなどのキーボードは買うことないだろう
+# こういうのってなんで user space でやらずに、本体に組込むんだろう
+# CONFIG_KEYBOARD_APPLESPI
+# CONFIG_KEYBOARD_QT1050
+# CONFIG_KEYBOARD_QT1070
+# CONFIG_KEYBOARD_QT2160
+# CONFIG_KEYBOARD_DLINK_DIR685
+# CONFIG_KEYBOARD_MCS
+# CONFIG_KEYBOARD_MPR121
+# CONFIG_KEYBOARD_TM2_TOUCHKEY
+
+# tablet は使わないだろう
+# CONFIG_INPUT_TABLET
+
+# touch screen も不要。PC では便利ではない
+# CONFIG_INPUT_TOUCHSCREEN
+```
+
+### device drivers, character device
+
+```
+# CONFIG_VIRTIO_CONSOLE
+```
+
+### device drivers, graphic supports
+
+```
+# CONFIG_VGA_SWITCHEROO
+# CONFIG_DRM_RADEON
+# CONFIG_DRM_NOUVEAU
+# CONFIG_DRM_I915
+
+# test まはた headless マシンで使うものなので n
+# CONFIG_DRM_VKMS
+
+# CONFIG_DRM_VMWGFX
+# CONFIG_DRM_GMA500
+# CONFIG_DRM_MGAG200
+# CONFIG_DRM_QXL
+# CONFIG_DRM_BOCHS
+# CONFIG_DRM_VIRTIO_GPU
+# CONFIG_DRM_CIRRUS_QEMU
+# CONFIG_DRM_GM12U320
+# CONFIG_DRM_VBOXVIDEO
+```
+
+### device drivers, sound card support
+
+```
+# alsa 下
+
+# 読みとる能力が無い
+# CONFIG_SND_VERBOSE_PROCFS
+# CONFIG_SND_VERBOSE_PRINTK
+# CONFIG_SND_DEBUG
+
+# CONFIG_SND_VIRTIO
+
+# generic sound drivers
+
+# テスターではない
+# CONFIG_SND_DUMMY
+
+# CONFIG_SND_VIRMIDI
+# CONFIG_SND_AC97_POWER_SAVE
+
+# HD-audio
+
+# 迷惑
+# CONFIG_SND_HDA_INPUT_BEEP
+
+# MMC/SD/SDIO card support 
+
+# CONFIG_MMC_TEST
+
+# RTC debug support
+# CONFIG_RTC_DEBUG
+```
+
+### device drivers, virtio immo
+
+```
+# CONFIG_VIRTIO_IOMMU
+```
+
+### device drivers, Rpmsg drivers
+```
+# RPMSG_VIRTIO
+```
+
+### device dirvers, RAS
+```
+# error を集めたところで使えない
+# CONFIG_RAS_CEC
+```
+
+### file systems
+
+```
+# 使わなそうなファイルシステム
+# CONFIG_REISERFS_FS
+# CONFIG_JFS_FS
+# CONFIG_GFS2_FS
+# CONFIG_OCFS2_FS
+# CONFIG_BTRFS_FS
+# CONFIG_NILFS2_FS
+# CONFIG_F2FS_FS
+# CONFIG_ZONEFS_FS
+
+# カーネル組み込み暗号化は基本使いにくい。gpg や gocryptfs なんかのほうが使い易い
+# CONFIG_FS_ENCRYPTION
+
+# unsure なら n だそうで。
+# CONFIG_FS_VERITY
+
+# 気にしたことがない。でかい SSD 買おう
+# CONFIG_QUOTA
+
+# 上を off にしたら自動で off になってくれないか？
+# CONFIG_QUOTA_NETLINK_INTERFACE
+
+# file system の下に file system を作る。必要性が分からない
+# CONFIG_OVERLAY_FS
+
+# overhead があり debug に有効ということなので、自分には無効
+# CONFIG_NETFS_STATS
+# CONFIG_FSCACHE_STATS
+
+# debug purpose 不要
+# CONFIG_FSCACHE_OBJECT_LIST
+
+# 不要な fs
+# CONFIG_ORANGEFS_FS
+# CONFIG_AFFS_FS
+# CONFIG_ECRYPT_FS
+# CONFIG_HFS_FS
+# CONFIG_HFSPLUS_FS
+# CONFIG_BEFS_FS
+# CONFIG_JFFS2_FS
+# CONFIG_UBIFS_FS
+# CONFIG_CRAMFS
+# CONFIG_SQUASHFS
+# CONFIG_MINIX_FS
+# CONFIG_OMFS_FS
+# CONFIG_ROMFS_FS
+
+# kernel panic を ram に書きだすそうだが、それを活用する方法を知らない
+# CONFIG_PSTORE_RAM
+
+# 不要な fs
+# CONFIG_UFS_FS
+# CONFIG_EROFS_FS
+
+# virtual box guest 側の fs は不要
+# CONFIG_VBOXSF_FS
+
+# nas しない
+# CONFIG_NETWORK_FILESYSTEMS
+
+# debug 使いこなせない
+# CONFIG_DLM_DEBUG
 ```
 
 ### security options
