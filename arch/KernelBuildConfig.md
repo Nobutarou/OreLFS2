@@ -32,11 +32,25 @@ CONFIG_LOCALVERSION="ore"
 ### general
 
 ```
-## timers subsystem
-# 基本 cpu は休もうとするのだけど休ませない設定 
-# CONFIG_HZ_PERIODIC
-# CONFIG_NO_HZ
-# CONFIG_HIGH_RES_TIMERS
+
+# 1st level
+# desktop 向としておく。
+CONFIG_PREEMPT_VOLUNTARY = y
+
+## CPU/Task time and stats accounting
+# unsure = n なのと performance impact あるらしいので
+# CONFIG_IRQ_TIME_ACCOUNTING
+
+# 1st level
+# 良く分からないけど journal が起動すればカーネルがログ貯める必要なくない？
+# 良く分からないけど jounalctl, dmesg で起動直後のが見えなくなったので
+# あまり小さくしてはだめ。とりあえず arch 設定-1 にとどめておく
+CONFIG_LOG_BUF_SHIFT = 16
+CONFIG_LOG_CPU_MAX_BUF_SHIFT = 13
+CONFIG_PRINTK_SAFE_LOG_BUF_SHIFT = 12
+
+# performance impact が有るらしいので
+# CONFIG_SLAB_FREELIST_HARDENED
 ```
 
 ### Processor type and features
@@ -66,6 +80,9 @@ CONFIG_IOSF_MBI=m
 # CONFIG_MICROCODE_INTEL is not set
 # CONFIG_X86_SGX is not set
 
+# dell で使わない
+# CONFIG_I8K
+
 # 自分の PC のためのカーネルなので不要
 # CONFIG_HYPERVISOR_GUEST is not set
 
@@ -80,32 +97,31 @@ CONFIG_NODES_SHIFT=1
 # CONFIG_CRASH_DUMP is not set
 ```
 
-### power and acpi
+### power management
 
 ```
 # CONFIG_SUSPEND
 # CONFIG_HIBERNATION
 # CONFIG_PM_DEBUG
 
-# 省電力とパフォーマンスで省電力寄りの機能
+# 省電力不要
 # CONFIG_WQ_POWER_EFFICIENT_DEFAULT
 
-## ACPI
+## acpi support
+# CONFIG_ACPI_EC_DEBUGFS
+# 
+# initrd を使ってなにかする機能だけど initrd 使わない
+# CONFIG_ACPI_TABLE_UPGRADE
 # CONFIG_ACPI_DEBUG
-# CONFIG_ACPI_EXTLOG
+# CONFIG_ACPI_HOTPLUG_MEMORY
 
 ## cpu freq.
 # CONFIG_CPU_FREQ_DEFAULT_GOV_PERFORMANCE
 # CONFIG_X86_INTEL_PSTATE
 # CONFIG_X86_P4_CLOCKMOD
-```
+# CONFIG_INTEL_IDLE
 
-### General architecture-dependent options
-
-```
-# for debugging
-# CONFIG_KPROBES
-# CONFIG_LOCK_EVENT_COUNTS
+# back to 1st tree
 ```
 
 ### loadable modules support
@@ -122,22 +138,6 @@ CONFIG_NODES_SHIFT=1
 
 # arch は y でビルドして strip するということをしている。始めから不要
 # CONFIG_MODULE_SIG
-```
-
-### block layer
-
-```
-# ZAC, ZBC, or ZNS なる記憶デバイスは持っていない
-# CONFIG_BLK_DEV_ZONED
-
-## partition types
-# CONFIG_AIX_PARTITION
-# CONFIG_MAC_PARTITION
-# CONFIG_BSD_DISKLABEL
-# CONFIG_MINIX_SUBPARTITION
-# CONFIG_SOLARIS_X86_PARTITION
-# CONFIG_LDM_PARTITION
-# CONFIG_KARMA_PARTITION
 ```
 
 ### memory management options
@@ -559,6 +559,7 @@ fireware 無いから、この下全て不要
 # CONFIG_MINIX_FS
 # CONFIG_OMFS_FS
 # CONFIG_ROMFS_FS
+# CONFIG_VIRTIO_FS
 
 # kernel panic を ram に書きだすそうだが、それを活用する方法を知らない
 # CONFIG_PSTORE_RAM
@@ -575,6 +576,16 @@ fireware 無いから、この下全て不要
 
 # debug 使いこなせない
 # CONFIG_DLM_DEBUG
+
+## native language support
+# 不要な言語は全部消す
+# apple 系も消す
+CONFIG_NLS_CODEPAGE_437 = m
+CONFIG_NLS_CODEPAGE_932 = m
+CONFIG_NLS_ASCII = m
+CONFIG_NLS_ISO8859_1 = m
+CONFIG_NLS_UTF8 = m
+
 ```
 
 ### security options
@@ -595,15 +606,39 @@ fireware 無いから、この下全て不要
 # CONFIG_INIT_ON_ALLOC_DEFAULT_ON is not set
 ```
 
+### Cryptographic API
+
+```
+## Hardware crypto devices
+# CONFIG_CRYPTO_DEV_PADLOCK
+# CONFIG_CRYPTO_DEV_ATMEL_ECC
+# CONFIG_CRYPTO_DEV_ATMEL_SHA204A
+# CONFIG_CRYPTO_DEV_CCP_DEBUGFS
+# CONFIG_CRYPTO_DEV_QAT_DH895xCC
+# CONFIG_CRYPTO_DEV_QAT_C3XXX
+# CONFIG_CRYPTO_DEV_QAT_C62X
+# CONFIG_CRYPTO_DEV_QAT_4XXX
+# CONFIG_CRYPTO_DEV_QAT_DH895xCCVF
+# CONFIG_CRYPTO_DEV_QAT_C3XXXVF
+# CONFIG_CRYPTO_DEV_QAT_C62XVF
+# CONFIG_CRYPTO_DEV_NITROX_CNN55XX
+# CONFIG_CRYPTO_DEV_CHELSIO
+# CONFIG_CRYPTO_DEV_VIRTIO
+# CONFIG_CRYPTO_DEV_SAFEXCEL
+# CONFIG_CRYPTO_DEV_AMLOGIC_GXL
+```
+
 ### kernel hacking
 
 ```
 # 開発者でもないし、デバッグ情報を読み解けるわけでもない
 # CONFIG_DEBUG_KERNEL is not set
 
+## Generic Kernel Debugging Instruments
 # kernel panic などになっても、何かキーを押すとメモリダンプできたりするそうだが
 # できたところで自分には何もできない
 # CONFIG_MAGIC_SYSRQ is not set
+# CONFIG_DEBUG_FS
 
 # 以下保留
 # 何か gcc に関する警告が出たところで理解できない
@@ -623,6 +658,11 @@ fireware 無いから、この下全て不要
 
 # raid のテストは自分には無意味
 # CONFIG_ASYNC_RAID6_TEST is not set
+
+## x86 debuging tree
+# usb debug デバイスなるものを使う debug 機能
+# CONFIG_EARLY_PRINTK_DBGP
+# CONFIG_EARLY_PRINTK_USB_XDBC
 ```
 
 
