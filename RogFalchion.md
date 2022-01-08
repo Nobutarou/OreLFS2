@@ -17,6 +17,14 @@ System に直でシャットダウンキー送りつけてるのだと思う。
 
 https://gist.github.com/jnettlet/afb20a048b8720f3b4eb8506d8b05643
 
+/etc/udev/hwdb.d/99-RogFalchion.hwdb
+
+```
+evdev:input:b*v0B05p193Ee0111*
+  KEYBOARD_KEY_10081=reserved
+  KEYBOARD_KEY_10082=reserved
+```
+
 ```
 systemd-hwdb update
 ```
