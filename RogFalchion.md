@@ -31,5 +31,21 @@ systemd-hwdb update
 
 直後は駄目だったけど、再起動したあとはうまく行っている。
 
+# /dev/input を rm する方法
+
+ASUSTek ROG FALCHION 以外の /dev/input/event を全部削除したが、それでもシャットダウンした。
+
+``sudo evtest`` で event id は分かる。またキーストロークのログを取れるが、別に
+ctrl-alt-del が押されるようなことは無かった。
+
+
+
+# 未検証の可能性
+
+もし tty から ログインしているために ctrl-alt-del が tty に送られてしまっているなら、
+/usr/lib/systemd/system/ctrl-alt-del.target を mask すれば良いのかもしれない。
+
+udev ルールで system control, consumer control を rm すれば良いのかもしれない
+
 <!-- vim: set tw=90 filetype=markdown : -->
 
