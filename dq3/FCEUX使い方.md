@@ -1,39 +1,27 @@
-# 必ず宝箱を落すチート
+# チートの仕方
 
-FCEUX の Linux 版はチート用の GUI はなく CUI のみ。FCEUX で DQ3 を起動したら F1 を押して、
-CUI を起動。以下
+https://wikiwiki.jp/nnnes1/%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E2%85%A2
 
-```
-2) New Cheats...
+のようにアドレスの値を直接変えたいなら、
 
-7) Add Game Genie Cheat
+Tools --> Cheats
 
-Command> 7
-Name: takarabako
-Code: AENLXAYA
-Add cheat "takarabako" for code "AENLXAYA"?(Y/N)[N]: Y
-Cheat added.
-```
+例えば一人目の経験値を最大にしたければ 
 
-すると $HOME/.fceux/cheats/{romのファイル名}.cht というテキストファイルができていて
+0746 に ff 
 
-```
-SCb8f2:00:07:takarabako
-```
+を与えれば良い。
 
-こんな感じになっている
+また、
 
-# チートのオンオフ
+https://www.realmofdarkness.net/dq/nes-dw3-codes/
+http://ryomayan.blog107.fc2.com/?no=264
 
-```
-Command> 1
- 1) * S $b8f2:000:007 - takarabako
- <'Enter' to make no selection or enter a number.> 1
- <(T)oggle status, (M)odify, or (D)elete this cheat.> t
-Cheat 1 disabled.
-```
+のように Genie (ジニー) コードを使いたいなら
 
-* で始まっている場合は有効。こんな感じで切り替えられる。
+Debug --> Game Genie Encode/Decode 
+
+を利用する。
 
 
 
