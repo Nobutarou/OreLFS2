@@ -5,7 +5,9 @@ S:07ae:ff:max gold
 S:0749:ff:2nd_exp_max
 S:074c:ff:3rd_exp_max
 S:074f:ff:4th_exp_max
-SC9724:09:29:kaishin
-SC96a4:00:17:twice_attack
-SCbc53:00:1a:odoroki_tomadou
+SC:9724:09:29:kaishin
+SC:96a4:00:17:twice_attack
+SC:bc53:00:1a:odoroki_tomadou
 SCbb2b:a9:e9:best_lvup
+SCb8f2:00:07:Drop items
+SCb85b:00:1d:Drop rare items
