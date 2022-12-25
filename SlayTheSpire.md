@@ -24,7 +24,17 @@ Exception in thread "LWJGL Application" java.lang.ExceptionInInitializerError
 
 という、とても xrandr に関係してる感じのしないエラーがでるので、分かりにくい。
 
-# GOG 版 mod 入れ方
+# GOG 版 mod 入れ方 (obso, 残念だけど入れられなくなった)
+
+https://www.reddit.com/r/slaythespire/comments/gj5kel/howto_add_mods_to_gog_version/
+
+が更新されている。
+
+https://steamworkshopdownloader.io/
+
+に steamcmd が必要になった。面倒なので Windows で DL することにしよう
+
+# GOG 版 mod 入れ方 (obso, 残念だけど入れられなくなった)
 
 https://www.reddit.com/r/slaythespire/comments/gj5kel/howto_add_mods_to_gog_version/
 
@@ -45,4 +55,3 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1609158507&searchtext=
 6. ModtheSpire を起動して遊ぶ。
 
 <!-- vim: set tw=90 filetype=markdown : -->
-
