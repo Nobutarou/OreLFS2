@@ -1,5 +1,7 @@
 # Arch 向け kernel build config
 
+kernel-6.5.5 でそれまで作ってきた .config で動かなくなったので、やり直す。
+
 ## initramfs を不要にするために
 
 ```
@@ -16,14 +18,60 @@ CONFIG_XFS_FS=y
 # CONFIG_RD_ZSTD is not set
 ```
 
-## モジュールフォルダを上書きしないために
+## モジュール
 
 ```
+# モジュールフォルダを上書きしないように、名前を付ける
 # 適当に ore1, ore2 などとしていけば、何かあってもすぐに戻れる。
 # bzimage を /boot にコピーする名前ももちろん変える。
 CONFIG_LOCALVERSION="ore"
 ```
 
+```
+# arch は y でビルドして strip するということをしている。始めから不要
+# CONFIG_MODULE_SIG=n
+```
+
+```
+# debug シンボルを消しながらインストールするのに。
+# デバッグ関連のフラッグをへし折っていけば自然と不要になると思う。
+make INSTALL_MOD_STRIP=1 modules_install
+```
+
+## 不要な機能
+
+### general
+
+```
+# arch は no_hz_full を使うがカーネルパラメータに nohz_full を入れないと no_hz_idle と同じ
+# と書いてある。じゃあ no_hz_idle でいいじゃん
+CONFIG_NO_HZ_IDLE=y
+#CONFIG_NO_HZ_FULL
+```
+
+### mitigations
+
+```
+# 個人に対してこれらの脆弱性を突ける時点で、既にセキュリティは突破されてる
+# CONFIG_SPECULATION_MITIGATIONS
+```
+
+### hacking
+
+```
+# いらん。どうせ何も分からん。
+#CONFIG_DEBUG_KERNEL
+
+# 使えたことが無いからいらん
+#CONFIG_MAGIC_SYSRQ
+
+# memory debuggig 全部要らん
+# 何かされてもどうせ分からん
+# 盗まれるなら、もっと簡単に盗まれるやろ
+# CONFIG_PAGE_POISONING
+```
+
+# 以下は古い情報
 ## 小さくビルドするために
 
 とは言ってもパフォーマンスに影響しないようなものは気にしない。ディスクは十分あるから。
