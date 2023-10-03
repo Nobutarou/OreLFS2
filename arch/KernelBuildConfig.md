@@ -4,6 +4,8 @@ kernel-6.5.5 でそれまで作ってきた .config で動かなくなったの�
 
 ## initramfs を不要にするために
 
+<!--{{{-->
+
 ```
 # ルートファイルシステムは組み込み
 CONFIG_XFS_FS=y
@@ -37,38 +39,61 @@ CONFIG_LOCALVERSION="ore"
 # デバッグ関連のフラッグをへし折っていけば自然と不要になると思う。
 make INSTALL_MOD_STRIP=1 modules_install
 ```
+<!--}}}-->
 
 ## 不要な機能
 
 ### general
 
+<!--{{{-->
 ```
 # arch は no_hz_full を使うがカーネルパラメータに nohz_full を入れないと no_hz_idle と同じ
 # と書いてある。じゃあ no_hz_idle でいいじゃん
 CONFIG_NO_HZ_IDLE=y
 #CONFIG_NO_HZ_FULL
 ```
+<!--}}}-->
 
 ### mitigations
 
+<!--{{{-->
 ```
 # 個人に対してこれらの脆弱性を突ける時点で、既にセキュリティは突破されてる
 # CONFIG_SPECULATION_MITIGATIONS
 ```
+<!--}}}-->
 
 ### hacking
 
 ```
 # いらん。どうせ何も分からん。
+# これ無効にすると 
+# make INSTALL_MOD_STRIP=1 modules_install の環境変数不要になる希ガス
 #CONFIG_DEBUG_KERNEL
 
 # 使えたことが無いからいらん
 #CONFIG_MAGIC_SYSRQ
 
-# memory debuggig 全部要らん
-# 何かされてもどうせ分からん
-# 盗まれるなら、もっと簡単に盗まれるやろ
+# memory debuggig 
+# 基本デバッグなんか出来ないから全部外す方針。
+# なんか使えなくなったり、パフォーマンスに影響あれば戻す。
 # CONFIG_PAGE_POISONING
+# CONFIG_DEBUG_WX 
+# CONFIG_SHRINKER_DEBUG 
+# CONFIG_KFENCE
+
+# tracers
+# CONFIG_BOOTTIME_TRACING
+# CONFIG_FUNCTION_GRAPH_TRACER 
+```
+
+## 必要
+
+### hacking
+
+```
+# これが無いと rog gladius iii の bluetooth 接続時のバッテリー残量が見えない
+CONFIG_DEBUG_RODATA_TEST=y
 ```
 
 # 以下は古い情報
@@ -716,4 +741,3 @@ CONFIG_NLS_UTF8 = m
 
 
 <!-- vim: set tw=90 filetype=markdown : -->
-
