@@ -65,8 +65,9 @@ CONFIG_NO_HZ_IDLE=y
 
 ### hacking
 
+どうせ何も分からないので、問題なければ無効にしていく。
+
 ```
-# いらん。どうせ何も分からん。
 # これ無効にすると 
 # make INSTALL_MOD_STRIP=1 modules_install の環境変数不要になる希ガス
 #CONFIG_DEBUG_KERNEL
@@ -85,6 +86,9 @@ CONFIG_NO_HZ_IDLE=y
 # tracers
 # CONFIG_BOOTTIME_TRACING
 # CONFIG_FUNCTION_GRAPH_TRACER 
+# CONFIG_DYNAMIC_FTRACE
+# CONFIG_FUNCTION_PROFILER (ore10)
+# CONFIG_STACK_TRACER (ore11)
 ```
 
 ## 必要
