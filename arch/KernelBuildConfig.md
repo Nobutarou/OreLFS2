@@ -66,6 +66,7 @@ CONFIG_NO_HZ_IDLE=y
 ### hacking
 
 どうせ何も分からないので、問題なければ無効にしていく。
+やる前に Archwiki と GentooWiki で何かに使われていないかは調べる。
 
 ```
 # これ無効にすると 
@@ -92,6 +93,16 @@ CONFIG_NO_HZ_IDLE=y
 # CONFIG_FUNCTION_TRACER (ore12, kpatch というものに使うらしいが知らん)
 # CONFIG_SCHED_TRACER (ore13)
 # CONFIG_HWLAT_TRACER (ore14)
+# CONFIG_TIMERLAT_TRACER (ore15)
+# CONFIG_OSNOISE_TRACER (ore16)
+# CONFIG_MMIOTRACE (ore17)
+# CONFIG_FTRACE_SYSCALLS (ore18)
+# CONFIG_TRACER_SNAPSHOT (ore19)
+# CONFIG_BLK_DEV_IO_TRACE (ore20, powertop に使うらしいが知らん)
+# CONFIG_KPROBE_EVENTS (ore21)
+# CONFIG_UPROBE_EVENTS (ore22)
+# CONFIG_USER_EVENTS (ore23)
+# CONFIG_HIST_TRIGGERS (ore24)
 ```
 
 ## 必要
