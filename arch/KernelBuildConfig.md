@@ -85,6 +85,7 @@ CONFIG_NO_HZ_IDLE=y
 # CONFIG_KFENCE
 
 # tracers
+<!--{{{-->
 # CONFIG_BOOTTIME_TRACING
 # CONFIG_FUNCTION_GRAPH_TRACER 
 # CONFIG_DYNAMIC_FTRACE
@@ -103,6 +104,12 @@ CONFIG_NO_HZ_IDLE=y
 # CONFIG_UPROBE_EVENTS (ore22)
 # CONFIG_USER_EVENTS (ore23)
 # CONFIG_HIST_TRIGGERS (ore24)
+<!--}}}-->
+
+# debugging も printk to debug port は要らないだろう。手段もなにも無いし。
+
+# test and coverage
+# CONFIG_FUNCTION_ERROR_INJECTION (ore26)
 ```
 
 ## 必要
@@ -112,6 +119,7 @@ CONFIG_NO_HZ_IDLE=y
 ```
 # これが無いと rog gladius iii の bluetooth 接続時のバッテリー残量が見えない
 CONFIG_DEBUG_RODATA_TEST=y
+CONFIG_SYNTH_EVENTS=y (ore25)
 ```
 
 # 以下は古い情報
