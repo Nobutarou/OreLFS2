@@ -110,6 +110,7 @@ CONFIG_NO_HZ_IDLE=y
 
 # test and coverage
 # CONFIG_FUNCTION_ERROR_INJECTION (ore26)
+# CONFIG_ASYNC_RAID6_TEST (ore27)
 ```
 
 ## 必要
