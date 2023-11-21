@@ -63,8 +63,25 @@ CONFIG_NO_HZ_IDLE=y
 ```
 <!--}}}-->
 
-### hacking
+### Library routines
 
+<!--{{{-->
+```
+# CONFIG_CRC4 (6.5.9ore2)
+# CONFIG_FONTS (6.5.9ore3)
+```
+<!--}}}-->
+
+### Cryptographic API 今ここ
+
+```
+# Crypto core or helper
+# CONFIG_CRYPTO_PCRYPT (6.5.9 ore4)
+# CONFIG_CRYPTO_TEST (6.5.9 ore5)
+# CONFIG_CRYPTO_ECRDSA (6.5.9 ore6)
+
+### hacking
+<!--{{{-->
 どうせ何も分からないので、問題なければ無効にしていく。
 やる前に Archwiki と GentooWiki で何かに使われていないかは調べる。
 
@@ -113,6 +130,7 @@ CONFIG_NO_HZ_IDLE=y
 # CONFIG_ASYNC_RAID6_TEST (ore27)
 # CONFIG_MEMTEST (6.5.9ore1)
 ```
+<!--}}}-->
 
 ## 必要
 
