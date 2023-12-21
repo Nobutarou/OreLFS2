@@ -1,5 +1,33 @@
 # 履歴を消してフォルダを軽くする
 
+## 今使ってる方法はこれ
+
+https://gist.github.com/ktx2207/3167fa69531bdd6b44f1
+
+ただし最後の 
+
+```
+git push --force origin master
+```
+
+は 
+
+```
+git push --force origin main
+```
+
+だったりするようだ。
+
+また、最後にブランチを戻す必要がある
+
+```
+git checkout main
+```
+
+master の時は master で
+
+## 古い
+
 新しいレポを作ったりしてたけど、そんな必要ないみたい。
 
 https://support.atlassian.com/bitbucket-cloud/docs/maintain-a-git-repository/

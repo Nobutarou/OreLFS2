@@ -80,6 +80,14 @@ CONFIG_NO_HZ_IDLE=y
 # CONFIG_CRYPTO_TEST (6.5.9 ore5)
 # CONFIG_CRYPTO_ECRDSA (6.5.9 ore6)
 
+# Public-key cryptography  --->
+# CONFIG_CRYPTO_SM2 (6.6.3 ore1)
+# CONFIG_CRYPTO_CURVE25519 (6.6.3ore2)
+
+# Block ciphers
+# CONFIG_CRYPTO_AES_TI (6.6.3ore3)
+```
+
 ### hacking
 <!--{{{-->
 どうせ何も分からないので、問題なければ無効にしていく。
