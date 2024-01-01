@@ -86,6 +86,8 @@ CONFIG_NO_HZ_IDLE=y
 
 # Block ciphers
 # CONFIG_CRYPTO_AES_TI (6.6.3ore3)
+# CONFIG_CRYPTO_BLOWFISH (6.6.3ore4)
+# CONFIG_CRYPTO_CAMELLIA (6.6.8ore1)
 ```
 
 ### hacking
