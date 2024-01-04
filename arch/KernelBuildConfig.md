@@ -88,6 +88,7 @@ CONFIG_NO_HZ_IDLE=y
 # CONFIG_CRYPTO_AES_TI (6.6.3ore3)
 # CONFIG_CRYPTO_BLOWFISH (6.6.3ore4)
 # CONFIG_CRYPTO_CAMELLIA (6.6.8ore1)
+# CONFIG_CRYPTO_DES (6.6.8ore2)
 ```
 
 ### hacking
@@ -144,7 +145,14 @@ CONFIG_NO_HZ_IDLE=y
 
 ## 必要
 
+### Cryptographic API
+
 ### hacking
+```
+# Block ciphers
+# iwd needs this.
+CONFIG_CRYPTO_DES (6.6.8ore2)
+```
 
 ```
 # これが無いと rog gladius iii の bluetooth 接続時のバッテリー残量が見えない
