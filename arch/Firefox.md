@@ -12,6 +12,9 @@ sudo trust extract-compat
 下のようなことをしていたが、どうやら淀が IP で弾いていることもあるみたい。
 ルータの再起動やテザリングで回避できたりする。
 
+# pdf.js に外部フォントを使わないようにする。
+
+about:config で ``PDFJS.disableFontFace=true``
 
 <!-- vim: set tw=90 filetype=markdown : -->
 
