@@ -93,6 +93,7 @@ CONFIG_NO_HZ_IDLE=y
 
 # Length-preserving ciphers and modes
 # CONFIG_CRYPTO_ADIANTUM (6.6.8ore5)
+# CONFIG_CRYPTO_CFB (6.7.2ore1)
 ```
 
 ### hacking
@@ -150,13 +151,13 @@ CONFIG_NO_HZ_IDLE=y
 ## 必要
 
 ### Cryptographic API
-
-### hacking
 ```
 # Block ciphers
 # iwd needs this.
 CONFIG_CRYPTO_DES (6.6.8ore2)
 ```
+
+### hacking
 
 ```
 # これが無いと rog gladius iii の bluetooth 接続時のバッテリー残量が見えない
