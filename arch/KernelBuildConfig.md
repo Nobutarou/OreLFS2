@@ -94,6 +94,7 @@ CONFIG_NO_HZ_IDLE=y
 # Length-preserving ciphers and modes
 # CONFIG_CRYPTO_ADIANTUM (6.6.8ore5)
 # CONFIG_CRYPTO_CFB (6.7.2ore1)
+# CONFIG_CRYPTO_CTS (6.7.2ore2)
 ```
 
 ### hacking
