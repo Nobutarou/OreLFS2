@@ -1,3 +1,15 @@
+# 文字化けを直す
+
+```
+flatpak run --command=fc-cache (アプリ名) -f -v
+```
+
+kicad の場合
+
+```
+flatpak run --command=fc-cache org.kicad.KiCad -f -v
+```
+
 # PulseAudio に接続できない
 
 今まで ```pulseaudio --start -D``` で起動してきたが、```start-pulseaudio-x11``` で起動する
