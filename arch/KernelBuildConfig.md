@@ -99,6 +99,9 @@ CONFIG_NO_HZ_IDLE=y
 # CONFIG_CRYPTO_KEYWRAP (6.8.2ore1)
 # CONFIG_CRYPTO_LRW (6.8.2ore2)
 # CONFIG_CRYPTO_XTS (6.8ore3)
+
+# AEAD chiphers
+# CONFIG_CRYPTO_AEGIS128 (6.8ore4)
 ```
 
 ### hacking
