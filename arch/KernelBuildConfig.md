@@ -105,6 +105,7 @@ CONFIG_NO_HZ_IDLE=y
 
 # Hash, digest, mac
 # CONFIG_CRYPTO_RMD160 (6.8.2ore5)
+# CONFIG_CRYPTO_SM3_GENERIC (6.8.2ore6)
 ```
 
 ### hacking
