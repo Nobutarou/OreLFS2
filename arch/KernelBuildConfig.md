@@ -114,6 +114,7 @@ CONFIG_NO_HZ_IDLE=y
 # Compression
 # CONFIG_CRYPTO_842 (6.9.3ore3)
 # CONFIG_CRYPTO_LZ4 (6.9.3ore4)
+# CONFIG_CRYPTO_LZ4HC (6.9.3ore5)
 ```
 
 ### hacking
