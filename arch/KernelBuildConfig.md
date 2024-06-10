@@ -118,6 +118,7 @@ CONFIG_NO_HZ_IDLE=y
 
 # Random number generation
 # CONFIG_CRYPTO_ANSI_CPRNG (6.9.3ore6)
+# CONFIG_CRYPTO_DRBG_HASH (6.9.3ore7)
 ```
 
 ### hacking
