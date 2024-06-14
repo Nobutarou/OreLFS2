@@ -120,6 +120,9 @@ CONFIG_NO_HZ_IDLE=y
 # CONFIG_CRYPTO_ANSI_CPRNG (6.9.3ore6)
 # CONFIG_CRYPTO_DRBG_HASH (6.9.3ore7)
 # CONFIG_CRYPTO_DRBG_CTR (6.9.3ore8)
+
+# Userspace interface
+# CONFIG_CRYPTO_USER_API_HASH (6.9.3ore9)
 ```
 
 ### hacking
