@@ -122,7 +122,7 @@ CONFIG_NO_HZ_IDLE=y
 # CONFIG_CRYPTO_DRBG_CTR (6.9.3ore8)
 
 # Userspace interface
-# CONFIG_CRYPTO_USER_API_HASH (6.9.3ore9)
+# CONFIG_CRYPTO_USER_API_SKCIPHER (6.9.3ore10)
 ```
 
 ### hacking
@@ -184,6 +184,10 @@ CONFIG_NO_HZ_IDLE=y
 # Block ciphers
 # iwd needs this.
 CONFIG_CRYPTO_DES (6.6.8ore2)
+
+# Userspace interface
+# iwd needs this.
+CONFIG_CRYPTO_USER_API_HASH (6.9.3ore9)
 ```
 
 ### hacking
