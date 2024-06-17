@@ -123,6 +123,7 @@ CONFIG_NO_HZ_IDLE=y
 
 # Userspace interface
 # CONFIG_CRYPTO_USER_API_RNG (6.9.3ore11)
+# CONFIG_CRYPTO_STATS (6.9.3ore12)
 ```
 
 ### hacking
