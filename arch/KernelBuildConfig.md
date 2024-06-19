@@ -127,6 +127,9 @@ CONFIG_NO_HZ_IDLE=y
 
 # Accelerated Cryptographic Algorithms for CPU (x86)
 # CONFIG_CRYPTO_BLOWFISH_X86_64 (6.9.3ore13)
+
+# Hardware crypto devices
+# CONFIG_CRYPTO_DEV_CCP (6.9.3ore14)
 ```
 
 ### hacking
