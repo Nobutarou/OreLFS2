@@ -130,6 +130,7 @@ CONFIG_NO_HZ_IDLE=y
 
 # Hardware crypto devices
 # CONFIG_CRYPTO_DEV_CCP (6.9.3ore14)
+# CONFIG_CRYPTO_DEV_VIRTIO (6.9.3ore15)
 ```
 
 ### hacking
