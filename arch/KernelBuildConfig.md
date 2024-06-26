@@ -131,6 +131,9 @@ CONFIG_NO_HZ_IDLE=y
 # Hardware crypto devices
 # CONFIG_CRYPTO_DEV_CCP (6.9.3ore14)
 # CONFIG_CRYPTO_DEV_VIRTIO (6.9.3ore15)
+
+# Asymmetric (public-key cryptographic) key type
+# CONFIG_SIGNED_PE_FILE_VERIFICATION (6.9.3ore16)
 ```
 
 ### hacking
