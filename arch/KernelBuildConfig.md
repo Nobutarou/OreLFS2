@@ -134,6 +134,9 @@ CONFIG_NO_HZ_IDLE=y
 
 # Asymmetric (public-key cryptographic) key type
 # CONFIG_SIGNED_PE_FILE_VERIFICATION (6.9.3ore16)
+
+# Certificates for signature checking
+# CONFIG_SECONDARY_TRUSTED_KEYRING (6.9.3ore17)
 ```
 
 ### hacking
