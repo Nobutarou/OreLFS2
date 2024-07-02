@@ -72,8 +72,17 @@ CONFIG_NO_HZ_IDLE=y
 ```
 <!--}}}-->
 
-### Cryptographic API 今ここ
+### Security options
 
+
+```
+# CONFIG_SECURITY_DMESG_RESTRICT (6.9.7ore2)
+```
+
+
+### Cryptographic API 
+
+<!-- {{{ -->
 ```
 # Crypto core or helper
 # CONFIG_CRYPTO_PCRYPT (6.5.9 ore4)
@@ -137,7 +146,9 @@ CONFIG_NO_HZ_IDLE=y
 
 # Certificates for signature checking
 # CONFIG_SECONDARY_TRUSTED_KEYRING (6.9.3ore17)
+# CONFIG_SYSTEM_BLACKLIST_KEYRING (6.9.7ore1)
 ```
+<!-- }}} -->
 
 ### hacking
 <!--{{{-->
