@@ -1,5 +1,5 @@
 S:0567:20:kaishin
-S0718:02:一人目僧侶男
+S:0718:02:一人目僧侶男
 S:0746:ff:1st_exp_max
 S:07ae:ff:max gold
 S:0749:ff:2nd_exp_max
@@ -8,12 +8,12 @@ S:074f:ff:4th_exp_max
 SC:9724:09:29:kaishin
 SC:96a4:00:17:twice_attack
 SC:bc53:00:1a:odoroki_tomadou
-SCbb2b:a9:e9:best_lvup
-SC:b8f2:00:07:Drop items
-SC:b85b:00:1d:Drop rare items
-S0719:08:二人目勇者女
-S071a:05:三人目商人男
-S071b:0b:4人目賢者
+SC:bb2b:a9:e9:best_lvup
+SCb8f2:00:07:Drop items
+SCb85b:00:1d:Drop rare items
+S:0719:08:二人目勇者女
+S:071a:05:三人目商人男
+S:071b:0b:4人目賢者
 S:056d:31:メタスラ
 S:60b8:1e:へんげホビット
 S:0773:4f:kurokoshou
