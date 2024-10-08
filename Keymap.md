@@ -31,3 +31,5 @@ setxkbmap -option terminate:ctrl_alt_bksp
 ```
 keycode 102 = Escape
 ```
+
+Escape みたいなのは ``/usr/include/X11/keysymdef.h`` を見る。
