@@ -26,3 +26,13 @@ KERNEL=="hidraw*", ATTRS{idVendor}=="054c", ATTRS{idProduct}=="09cc", GROUP="inp
 #KERNEL=="hidraw*", ATTRS{idVendor}=="054c", ATTRS{idProduct}=="0ba0", MODE="0660", TAG+="uaccess"
 ```
 
+# /run 以外のフォルダを使えるようにする
+
+何もしないと ``/run/user/1000/`` 某しか使えなくて Steam で Steam 以外のゲームのインストー
+ルができない。
+
+```
+flatpak override --user --filesystem=/var/games com.valvesoftware.Steam
+```
+
+などとしておく(パーミッションはもちろん必要)。
