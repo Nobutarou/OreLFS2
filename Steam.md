@@ -36,3 +36,12 @@ flatpak override --user --filesystem=/var/games com.valvesoftware.Steam
 ```
 
 などとしておく(パーミッションはもちろん必要)。
+
+あと、インストーラ.exe でインストールするときは、インストール先を Z ドライブ (Linux 上の普
+通のディレクトリ) にする
+
+# プロパティなどのダイアログが出てこない。
+
+steam → settings → interface で
+
+Enable context menu focus compatibility mode を on にすると出てきた。
