@@ -1,6 +1,8 @@
-# uim 
+# Qt アプリで日本語入力できない
 
-## uim-xim
+vlc が入っている時、できる。アンインストールするとできない。多分 qt5-x11extras 
+
+# uim-xim
 不要。xterm とか使わないし。むしろ firefox でキーリピートしないという問題が出た。
 
 ```
@@ -11,8 +13,7 @@
 これで /usr/lib/gtk-2.0/2.10.0/immodules.cache と /usr/lib/gtk-3.0/3.0.0/immodules.cache
 が更新される。
 
-
-## ロケールの問題
+# ロケールの問題
 
 /etc/locale.conf に従って
 
