@@ -1,0 +1,15 @@
+#!/bin/zsh
+#echo $COLUMNS 
+#echo $LINES
+echo $(( RATIO = $COLUMNS.0 / $LINES.0 ))
+#echo $RATIO
+echo $(( FLAG = ( $RATIO > 2.5 ) ))
+#echo $FLAG
+case $FLAG in
+  0)
+    echo vsplit ; mlcc exec vsplit_screen;;
+  1)
+    echo hsplit; mlcc exec hsplit_screen;;
+esac
+
+

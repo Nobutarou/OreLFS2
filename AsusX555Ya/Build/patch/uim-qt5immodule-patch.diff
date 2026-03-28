@@ -1,0 +1,12 @@
+--- uim/qt5/immodule/quimplatforminputcontextplugin.pro.in.org	2017-06-12 23:17:31.360473468 +0900
++++ uim/qt5/immodule/quimplatforminputcontextplugin.pro.in	2017-06-12 23:18:15.710473349 +0900
+@@ -1,7 +1,8 @@
+ include(../../qt4/common.pro)
+ 
+ PLUGIN_TYPE = platforminputcontexts
+-load(qt_plugin)
++TEMPLATE = lib
++CONFIG += plugin
+ 
+ # to include util.h and for quimplatforminputcontext.cpp
+ INCLUDEPATH += @srcdir@/../../qt4/candwin \

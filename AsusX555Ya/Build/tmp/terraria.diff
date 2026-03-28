@@ -1,0 +1,27 @@
+--- baselibs.txt	2019-01-03 08:07:48.810287925 +0900
++++ terraria.txt	2019-01-03 09:31:19.660360653 +0900
+@@ -23,6 +23,8 @@
+ /opt/Linux-PAM-1.3.0_clang2pgomarch/usr/lib/libpam_misc.so.0.82.1
+ /opt/NetworkManager-1.12.2_clang2pgomarch/usr/lib/NetworkManager/1.12.2/libnm-device-plugin-adsl.so
+ /opt/NetworkManager-1.12.2_clang2pgomarch/usr/lib/NetworkManager/1.12.2/libnm-device-plugin-wifi.so
++/opt/SDL2-2.0.8_clang2pgomarch/usr/lib/libSDL2-2.0.so.0.8.0
++/opt/SDL2_image-2.0.4_clang2pgomarch/usr/lib/libSDL2_image-2.0.so.0.2.2
+ /opt/acl-2.2.52_pgo/usr/lib/libacl.so.1.1.0
+ /opt/alsa-lib-1.1.5_pgo/usr/lib/libasound.so.2.0.0
+ /opt/atk-2.30.0_clang2pgoltomarch/usr/lib64/libatk-1.0.so.0.23009.1
+@@ -56,6 +58,7 @@
+ /opt/libSM-1.2.3_clang2pgomarch/usr/lib/libSM.so.6.0.1
+ /opt/libX11-1.6.7_clang2pgoltomarch/usr/lib/libX11-xcb.so.1.0.0
+ /opt/libX11-1.6.7_clang2pgoltomarch/usr/lib/libX11.so.6.3.0
++/opt/libXScrnSaver-1.2.3_clang2pgomarch/usr/lib/libXss.so.1.0.0
+ /opt/libXau-1.0.8_clang2pgomarch/usr/lib/libXau.so.6.0.0
+ /opt/libXcomposite-0.4.4_clang2pgomarch/usr/lib/libXcomposite.so.1.0.0
+ /opt/libXcursor-1.1.15_clang2pgomarch/usr/lib/libXcursor.so.1.0.2
+@@ -119,6 +122,7 @@
+ /opt/mlterm-3.8.7_clang2pgomarch/usr/lib/mef/libmef_jajp.so
+ /opt/mlterm-3.8.7_clang2pgomarch/usr/lib/mlterm/libctl_bidi.so
+ /opt/mlterm-3.8.7_clang2pgomarch/usr/lib/mlterm/libim-uim.so
++/opt/mojoshader_clang2pgomarch/libmojoshader.so
+ /opt/mpfr-4.0.0_clang2pgoarch/usr/lib/libmpfr.so.6.0.0
+ /opt/mtdev-1.1.5_clang2pgoarch/usr/lib/libmtdev.so.1.0.0
+ /opt/ncurses-6.1_clang2pgomarch/usr/lib/libncursesw.so.6.1
