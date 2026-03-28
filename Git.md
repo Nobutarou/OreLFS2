@@ -1,55 +1,24 @@
 # 履歴を消してフォルダを軽くする
 
-## 今使ってる方法はこれ
-
-https://gist.github.com/ktx2207/3167fa69531bdd6b44f1
-
-ただし最後の 
+## .git を rm -fr するシンプルな方法
 
 ```
-git push --force origin master
+rm -fr .git
+git init
+git add .
+git commit -m "Re-initialize repository"
+
+# github のページからコピーするのが確実
+git remote add origin git@github.com:User_Name/Repo_Name.git
+git branch -M main
+git push -u origin main --force
 ```
 
-は 
+## 履歴を圧縮？する方法
 
 ```
-git push --force origin main
+git gc --prune=now --aggressive
 ```
-
-だったりするようだ。
-
-また、最後にブランチを戻す必要がある
-
-```
-git checkout main
-```
-
-master の時は master で
-
-## 古い
-
-新しいレポを作ったりしてたけど、そんな必要ないみたい。
-
-https://support.atlassian.com/bitbucket-cloud/docs/maintain-a-git-repository/
-
-BFG を使うのが楽だった
-
-リポジトリの一つ上で
-
-```
-java -jar bfg.jar --strip-blobs-bigger-than 1K <repo folder>
-```
-
-そしたら
-```
-git reflog expire --expire=now --all
-git gc --prune=now
-git push --all --force
-git push --tags --force
-```
-
-BFG 本家のやり方だとエラーで push できないので Bitbucket のやり方が良いみたい
-https://rtyley.github.io/bfg-repo-cleaner/
 
 <!-- vim: set tw=90 filetype=markdown : -->
 
